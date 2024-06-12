@@ -1,0 +1,11 @@
+.new :target {
+  animation: yellowflash-bg 2s;
+}
+@keyframes yellowflash-bg {
+  from {
+    background: yellow;
+  }
+  to {
+    background: transparent;
+  }
+}

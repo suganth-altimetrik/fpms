@@ -1,0 +1,28 @@
+<div class="container">
+  <app-invest-summary></app-invest-summary>
+
+  <div class="row">
+    <div class="col-12 col-lg order-2 order-lg-1">
+      <label>Top Investments</label>
+      <div class="d-flex flex-wrap mt-3">
+        <app-card
+          *ngFor="let item of topInvestments"
+          [value]="item"
+          [icon]="getRandomIcon()"
+        ></app-card>
+      </div>
+
+      <div class="mb-4">
+        <label>Recent Investments</label>
+        <div class="bg-white p-3 rounded-3 mt-3 shadow">
+          <app-invest-table></app-invest-table>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg order-1 order-lg-2">
+      <div class="chart shadow">
+        <app-invest-chart></app-invest-chart>
+      </div>
+    </div>
+  </div>
+</div>

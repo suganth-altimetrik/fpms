@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-custom">
+  <div class="container-fluid">
+    <a class="navbar-brand">Financial Portfolio Management System</a>
+
+    <div class="navbar navbar-right" *ngIf="user">
+      <span class="navbar-text text-capitalize">Hello, {{ user.name }}</span>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" role="button" (click)="userLogout()">
+            <i-feather name="power" style="width: 20px"></i-feather>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

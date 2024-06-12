@@ -1,0 +1,38 @@
+<table class="table table-borderless recent-tran">
+  <thead>
+    <tr>
+      <th style="width: 150px">Invested On</th>
+      <th>Asset Type</th>
+      <th class="text-center">Quantity</th>
+      <th class="text-center">Price</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="recentList.length > 0; else noData">
+    <tr *ngFor="let item of recentList">
+      <td>{{ item.date | date }}</td>
+      <td class="text-uppercase">{{ item.asset_type }}</td>
+      <td class="text-center">{{ item.quantity }}</td>
+      <td class="text-center">{{ item.purchase_price | currency }}</td>
+      <td>
+        <div class="badge text-bg-success cbadge">
+          <i-feather
+            name="check-circle"
+            style="width: 13px; height: 14px"
+          ></i-feather>
+          Completed
+        </div>
+      </td>
+    </tr>
+  </tbody>
+
+  <ng-template #noData>
+    <tbody>
+      <tr>
+        <td class="text-center text-secondary" colspan="5">
+          Your recent investments will be shown here
+        </td>
+      </tr>
+    </tbody>
+  </ng-template>
+</table>

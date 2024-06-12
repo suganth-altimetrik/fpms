@@ -1,0 +1,24 @@
+<div class="row mb-4">
+  <div class="col-12 col-lg-4">
+    <label class="home-label">Total Investments</label>
+    <div class="total-inv">
+      {{ summary.total | currency }}
+      <a role="button" routerLink="/new-investment">
+        <i-feather name="plus" style="width: 10px; height: 10px"></i-feather>
+        Add Investment</a
+      >
+    </div>
+  </div>
+  <div class="col-12 col-sm">
+    <label class="home-label">Today's</label>
+    <div class="total-inv-sub">{{ summary.today | currency }}</div>
+  </div>
+  <div class="col-12 col-sm">
+    <label class="home-label">Last 7 Days</label>
+    <div class="total-inv-sub">{{ summary.week | currency }}</div>
+  </div>
+  <div class="col-12 col-sm">
+    <label class="home-label">Last 30 Days</label>
+    <div class="total-inv-sub">{{ summary.month | currency }}</div>
+  </div>
+</div>

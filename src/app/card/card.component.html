@@ -1,0 +1,14 @@
+<div class="inv-card shadow">
+  <div class="d-flex align-items-center mb-4">
+    <div class="icon">
+      <i-feather [name]="icon" style="width: 20px"></i-feather>
+    </div>
+    <div class="title">{{ input.asset_type }}</div>
+  </div>
+
+  <div class="amount">
+    <div class="quantity">x{{ input.quantity }}</div>
+    <div class="value">{{ input.purchase_price | currency }}</div>
+    <div class="date">{{ input.date | date }}</div>
+  </div>
+</div>

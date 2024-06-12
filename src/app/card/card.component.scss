@@ -1,0 +1,42 @@
+.inv-card {
+  background-color: #ffffff;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  width: 8.7rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-left: 2px solid #008efb9d;
+
+  .icon {
+    border: 1px solid #008ffb;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .title {
+    color: #222;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .amount {
+    .quantity {
+      color: #6d6b6b;
+      font-size: 0.7rem;
+    }
+    .value {
+      color: #222;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    .date {
+      color: #6d6b6b;
+      font-size: 0.7rem;
+    }
+  }
+}

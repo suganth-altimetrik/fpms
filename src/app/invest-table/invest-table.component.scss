@@ -1,0 +1,26 @@
+.recent-tran {
+  font-size: 0.8rem;
+
+  th {
+    color: rgb(141, 141, 134);
+    font-weight: 500;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .cbadge {
+    font-weight: 400;
+    font-size: 0.7rem !important;
+
+    &.text-bg-primary {
+      background-color: rgb(185 223 255) !important;
+      color: rgb(34 86 165) !important;
+    }
+
+    &.text-bg-success {
+      background-color: rgb(167, 235, 184) !important;
+      color: green !important;
+    }
+  }
+}

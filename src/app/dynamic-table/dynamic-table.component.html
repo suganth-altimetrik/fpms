@@ -1,0 +1,22 @@
+<table class="table table-bordered">
+  <thead>
+    <tr class="text-uppercase">
+      <th *ngFor="let item of headData" class="new">{{ item }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of bodyData">
+      <td *ngFor="let cell of headData">
+        <span> INR </span>
+        {{ item[cell] }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-primary me-2" (click)="handleStart()">
+  Click to Start
+</button>
+<!-- <button type="button" class="btn btn-default" (click)="handleEnd()">
+  Stop
+</button> -->
