@@ -7,7 +7,7 @@ export class SocketService {
   private socket: Socket;
 
   constructor() {
-    this.socket = io('http://localhost:6077');
+    this.socket = io('ws://localhost:6077');
   }
 
   // EMITTER example

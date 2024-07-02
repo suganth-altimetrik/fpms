@@ -1,6 +1,6 @@
 <div class="row mb-4">
   <div class="col-12 col-lg-4">
-    <label class="home-label">Total Investments</label>
+    <label class="home-label">Investments</label>
     <div class="total-inv">
       {{ summary.total | currency }}
       <a role="button" routerLink="/new-investment">
@@ -10,15 +10,15 @@
     </div>
   </div>
   <div class="col-12 col-sm">
-    <label class="home-label">Today's</label>
+    <label class="home-label">Today</label>
     <div class="total-inv-sub">{{ summary.today | currency }}</div>
   </div>
   <div class="col-12 col-sm">
-    <label class="home-label">Last 7 Days</label>
+    <label class="home-label">Recent Investments</label>
     <div class="total-inv-sub">{{ summary.week | currency }}</div>
   </div>
   <div class="col-12 col-sm">
-    <label class="home-label">Last 30 Days</label>
+    <label class="home-label">This month</label>
     <div class="total-inv-sub">{{ summary.month | currency }}</div>
   </div>
 </div>

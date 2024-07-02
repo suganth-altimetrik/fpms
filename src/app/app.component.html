@@ -1,8 +1,15 @@
-<!-- <app-header></app-header>
+<app-theme-switcher></app-theme-switcher>
 
-<router-outlet></router-outlet> -->
+<app-header></app-header>
+
+<router-outlet></router-outlet>
 
 <app-dynamic-table></app-dynamic-table>
-<app-dynamic-table></app-dynamic-table>
-<app-dynamic-table></app-dynamic-table>
-<app-dynamic-table></app-dynamic-table>
+
+<!-- <app-push-notification></app-push-notification> -->
+
+<div class="container">
+  <div class="alert alert-success" *ngFor="let item of list; trackBy: identify">
+    Hello {{ item }}
+  </div>
+</div>

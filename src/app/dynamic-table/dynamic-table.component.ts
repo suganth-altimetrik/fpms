@@ -10,6 +10,7 @@ import { SocketService } from '../services/socket.service';
 })
 export class DynamicTableComponent implements OnInit {
   constructor(private http: InvestApiService, private socket: SocketService) {
+    //connection
     this.socket.sendMessage('admin');
   }
 

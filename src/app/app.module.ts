@@ -24,6 +24,10 @@ import { InvestTableComponent } from './invest-table/invest-table.component';
 import { InvestChartComponent } from './invest-chart/invest-chart.component';
 import { InvestSummaryComponent } from './invest-summary/invest-summary.component';
 import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { PushNotificationComponent } from './push-notification/push-notification.component';
+import { ButtonComponent } from './button/button.component';
+import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
 
 export function localStorageSyncReducer(
   reducer: ActionReducer<any>
@@ -43,6 +47,9 @@ export function localStorageSyncReducer(
     InvestChartComponent,
     InvestSummaryComponent,
     DynamicTableComponent,
+    PushNotificationComponent,
+    ButtonComponent,
+    ThemeSwitcherComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,6 +63,12 @@ export function localStorageSyncReducer(
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
   ],
   providers: [
     {

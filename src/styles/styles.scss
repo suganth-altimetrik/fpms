@@ -1,0 +1,16 @@
+@import "variables";
+@import "theme-light";
+@import "theme-dark";
+@import "mixins";
+
+body.theme-light {
+  @include apply-theme("theme-light");
+}
+
+body.theme-dark {
+  @include apply-theme("theme-dark");
+}
+
+body {
+  background-color: var(--background-color);
+}

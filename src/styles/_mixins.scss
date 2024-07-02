@@ -1,0 +1,10 @@
+@import "theme-dark";
+@import "theme-light";
+
+@mixin apply-theme($theme) {
+  @if $theme == "theme-light" {
+    @include theme-light;
+  } @else if $theme == "theme-dark" {
+    @include theme-dark;
+  }
+}
