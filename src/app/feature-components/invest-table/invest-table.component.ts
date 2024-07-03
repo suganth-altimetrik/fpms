@@ -1,6 +1,12 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { InvestApiService } from '../../services/invest-api.service';
 import { Invest } from '../../models/invest.model';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-invest-table',
@@ -8,22 +14,31 @@ import { Invest } from '../../models/invest.model';
   styleUrl: './invest-table.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class InvestTableComponent implements OnInit {
+export class InvestTableComponent implements OnInit, OnDestroy {
   recentList: Invest[] = [];
+  private recentSubscription: Subscription;
+  private listSubscription: Subscription;
 
   constructor(private investApi: InvestApiService) {
-    this.investApi.recentInvestments().subscribe(({ data }: any) => {
-      this.recentList = data;
-    });
-
-    this.investApi.investList.subscribe((data: any) => {
+    this.listSubscription = this.investApi.investList.subscribe((data: any) => {
       this.recentList = [data, ...this.recentList];
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recentSubscription = this.investApi
+      .recentInvestments()
+      .subscribe(({ data }: any) => {
+        this.recentList = data;
+      });
+  }
 
   trackRecord(index: number, data: any) {
     return data._id;
+  }
+
+  ngOnDestroy(): void {
+    this.recentSubscription.unsubscribe();
+    this.listSubscription.unsubscribe();
   }
 }

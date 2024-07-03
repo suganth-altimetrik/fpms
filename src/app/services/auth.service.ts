@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnDestroy } from '@angular/core';
 import {
   BehaviorSubject,
   Observable,
   Subject,
+  Subscription,
   catchError,
   tap,
   throwError,
@@ -29,9 +30,9 @@ export interface AuthResponse {
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
   userSub = new BehaviorSubject<User | any>(null);
-
+  private loginSubscription: Subscription;
   user$: Observable<UserState>;
 
   constructor(
@@ -75,7 +76,7 @@ export class AuthService {
   }
 
   autoLogin() {
-    this.user$.subscribe((userData: UserState) => {
+    this.loginSubscription = this.user$.subscribe((userData: UserState) => {
       const { email, name, user_id, token } = userData;
       if (!userData) {
         return;
@@ -116,5 +117,9 @@ export class AuthService {
     const user = new User(user_id, email, name, token);
     this.store.dispatch(userLogin({ email, name, token, user_id }));
     this.userSub.next(user);
+  }
+
+  ngOnDestroy(): void {
+    this.loginSubscription.unsubscribe();
   }
 }

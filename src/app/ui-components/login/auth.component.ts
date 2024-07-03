@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthResponse, AuthService } from '../../../app/services/auth.service';
-import { Observable } from 'rxjs';
+import { AuthService } from '../../../app/services/auth.service';
+import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
@@ -10,9 +10,12 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })
-export class LoginComponent {
+export class LoginComponent implements OnDestroy {
   isLoginMode: boolean = true;
   isLoading: boolean = false;
+
+  private loginSubscription: Subscription;
+  private registerSubscription: Subscription;
 
   constructor(
     private authService: AuthService,
@@ -29,7 +32,7 @@ export class LoginComponent {
 
     let apiObs = this.authService.login(email, password);
 
-    apiObs.subscribe(() => {
+    this.loginSubscription = apiObs.subscribe(() => {
       this.toastr.success('Login Successful!');
       this.router.navigate(['/dashboard']);
     });
@@ -43,11 +46,16 @@ export class LoginComponent {
 
     let apiObs = this.authService.signup(email, name, password);
 
-    apiObs.subscribe(() => {
+    this.registerSubscription = apiObs.subscribe(() => {
       this.toastr.success('Registration and Login Successful!');
       this.router.navigate(['/dashboard']);
     });
     this.isLoading = false;
     formData.reset();
+  }
+
+  ngOnDestroy(): void {
+    this.loginSubscription.unsubscribe();
+    this.registerSubscription.unsubscribe();
   }
 }
