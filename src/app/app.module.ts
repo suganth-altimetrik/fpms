@@ -30,8 +30,7 @@ import { ThemeSwitcherComponent } from './feature-components/theme-switcher/them
 import { LoginComponent } from './ui-components/login/auth.component';
 import { ToggleButtonComponent } from './ui-components/toggle-button/toggle-button.component';
 import { TextInputComponent } from '../shared/text-input/text-input.component';
-// import { TestComponent } from './ui-components/test/test.component';
-import { TestModule } from './ui-components/test/test.module';
+import { NewInvestmentModuleRoutingModule } from './ui-components/new-investment-module/new-investment-module-routing.module';
 
 export function localStorageSyncReducer(
   reducer: ActionReducer<any>
@@ -56,11 +55,10 @@ export function localStorageSyncReducer(
     ThemeSwitcherComponent,
     ToggleButtonComponent,
     TextInputComponent,
-    // TestComponent,
   ],
   imports: [
     BrowserModule,
-    TestModule,
+    NewInvestmentModuleRoutingModule,
     AppRoutingModule,
     StoreModule.forRoot(reducer, { metaReducers }),
     StoreDevtoolsModule.instrument(),
