@@ -31,6 +31,8 @@ import { LoginComponent } from './ui-components/login/auth.component';
 import { ToggleButtonComponent } from './ui-components/toggle-button/toggle-button.component';
 import { TextInputComponent } from '../shared/text-input/text-input.component';
 import { NewInvestmentModuleRoutingModule } from './ui-components/new-investment-module/new-investment-module-routing.module';
+import { AgCharts } from 'ag-charts-angular';
+import { InvestAgChartComponent } from './feature-components/invest-ag-chart/invest-ag-chart.component';
 
 export function localStorageSyncReducer(
   reducer: ActionReducer<any>
@@ -55,9 +57,11 @@ export function localStorageSyncReducer(
     ThemeSwitcherComponent,
     ToggleButtonComponent,
     TextInputComponent,
+    InvestAgChartComponent,
   ],
   imports: [
     BrowserModule,
+    AgCharts,
     NewInvestmentModuleRoutingModule,
     AppRoutingModule,
     StoreModule.forRoot(reducer, { metaReducers }),

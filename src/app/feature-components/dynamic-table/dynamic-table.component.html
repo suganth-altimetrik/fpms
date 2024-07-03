@@ -5,7 +5,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of bodyData; trackBy: trackRecord">
+    <tr *ngFor="let item of bodyData">
       <td *ngFor="let cell of headData">
         <span> INR </span>
         {{ item[cell] }}

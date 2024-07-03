@@ -16,11 +16,4 @@ export class AppComponent {
     this.authService.autoLogin();
     // this.push.subscribeToNotifications();
   }
-
-  list = ['suganth', 'jake', 'john', 'test'];
-
-  identify(index: number, item: any) {
-    console.log('track', index, item);
-    return item.name;
-  }
 }

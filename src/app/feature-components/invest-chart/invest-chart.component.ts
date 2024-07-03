@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import {
   ChartComponent,
   ApexAxisChartSeries,
@@ -101,20 +101,6 @@ export class InvestChartComponent {
           },
         },
         xaxis: {
-          // categories: [
-          //   'Jan',
-          //   'Feb',
-          //   'Mar',
-          //   'Apr',
-          //   'May',
-          //   'Jun',
-          //   'Jul',
-          //   'Aug',
-          //   'Sep',
-          //   'Oct',
-          //   'Nov',
-          //   'Dec',
-          // ],
           categories: _category,
           position: 'top',
           labels: {

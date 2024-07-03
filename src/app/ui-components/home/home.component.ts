@@ -18,17 +18,7 @@ export class HomeComponent {
     });
   }
 
-  getRandomIcon() {
-    const icons = [
-      { id: 1, name: 'star' },
-      { id: 2, name: 'anchor' },
-      { id: 3, name: 'camera' },
-      { id: 4, name: 'bell' },
-    ];
-    const value: number = Math.floor(Math.random() * (4 - 1 + 1) + 1);
-
-    // return icons.find((o) => o.id == value)?.name;
-
-    return 'bell';
+  trackRecord(index: number, data: Invest) {
+    return data;
   }
 }

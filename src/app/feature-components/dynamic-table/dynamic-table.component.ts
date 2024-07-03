@@ -14,10 +14,6 @@ export class DynamicTableComponent implements OnInit {
     this.socket.sendMessage('admin');
   }
 
-  trackRecord(data: any) {
-    return data.infy;
-  }
-
   headData: any = [
     'infy',
     'tata',

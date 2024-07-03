@@ -24,6 +24,7 @@
     "@ngrx/entity": "^17.2.0",
     "@ngrx/store": "^17.2.0",
     "@ngrx/store-devtools": "^17.2.0",
+    "ag-charts-angular": "^10.0.0",
     "angular-feather": "^6.5.1",
     "apexcharts": "^3.49.1",
     "bootstrap": "^5.3.3",
