@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { InvestApiService } from '../services/invest-api.service';
-import { Invest } from './../models/invest.model';
+import { InvestApiService } from '../../services/invest-api.service';
+import { Invest } from '../../models/invest.model';
 
 @Component({
   selector: 'app-invest-table',

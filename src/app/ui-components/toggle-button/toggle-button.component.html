@@ -1,0 +1,11 @@
+<input
+  type="checkbox"
+  [checked]="checked"
+  id="toggle-button-checkbox"
+  (change)="changed.emit($event.target.checked)"
+/>
+<label class="toggle-button-switch" for="toggle-button-checkbox"></label>
+<div class="toggle-button-text">
+  <div class="toggle-button-text-on">Light</div>
+  <div class="toggle-button-text-off">Dark</div>
+</div>

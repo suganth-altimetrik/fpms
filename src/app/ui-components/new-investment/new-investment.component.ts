@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { InvestApiService } from '../services/invest-api.service';
-import { Invest } from '../models/invest.model';
+import { InvestApiService } from '../../services/invest-api.service';
+import { Invest } from '../../models/invest.model';
 import { Subscription } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from '../auth/auth.service';
-import { User } from '../auth/user.model';
+import { AuthService } from '../../services/auth.service';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-new-investment',

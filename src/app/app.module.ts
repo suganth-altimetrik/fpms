@@ -8,26 +8,27 @@ import { ActionReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { localStorageSync } from 'ngrx-store-localstorage';
 import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './ui-components/header/header.component';
 import { IconsModule } from './icons/icons.module';
-import { CardComponent } from './card/card.component';
+import { CardComponent } from './feature-components/card/card.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { NewInvestmentComponent } from './new-investment/new-investment.component';
+import { NewInvestmentComponent } from './ui-components/new-investment/new-investment.component';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
-import { AuthComponent } from './auth/auth.component';
-import { reducer, userFeatureKey } from './auth/redux/reducer/user.reducer';
-import { metaReducers } from './auth/redux/reducer/meta-reducer';
-import { AuthInterceptorService } from './auth/auth-interceptor.service';
-import { InvestTableComponent } from './invest-table/invest-table.component';
-import { InvestChartComponent } from './invest-chart/invest-chart.component';
-import { InvestSummaryComponent } from './invest-summary/invest-summary.component';
-import { DynamicTableComponent } from './dynamic-table/dynamic-table.component';
+import { reducer, userFeatureKey } from '../store/reducer/user.reducer';
+import { metaReducers } from '../store/reducer/meta-reducer';
+import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
+import { InvestTableComponent } from './feature-components/invest-table/invest-table.component';
+import { InvestChartComponent } from './feature-components/invest-chart/invest-chart.component';
+import { InvestSummaryComponent } from './feature-components/invest-summary/invest-summary.component';
+import { DynamicTableComponent } from './feature-components/dynamic-table/dynamic-table.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { PushNotificationComponent } from './push-notification/push-notification.component';
-import { ButtonComponent } from './button/button.component';
-import { ThemeSwitcherComponent } from './theme-switcher/theme-switcher.component';
+import { PushNotificationComponent } from '../push-notification/push-notification.component';
+import { ButtonComponent } from './ui-components/button/button.component';
+import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
+import { LoginComponent } from './ui-components/login/auth.component';
+import { ToggleButtonComponent } from './ui-components/toggle-button/toggle-button.component';
 
 export function localStorageSyncReducer(
   reducer: ActionReducer<any>
@@ -42,7 +43,7 @@ export function localStorageSyncReducer(
     HeaderComponent,
     CardComponent,
     NewInvestmentComponent,
-    AuthComponent,
+    LoginComponent,
     InvestTableComponent,
     InvestChartComponent,
     InvestSummaryComponent,
@@ -50,6 +51,7 @@ export function localStorageSyncReducer(
     PushNotificationComponent,
     ButtonComponent,
     ThemeSwitcherComponent,
+    ToggleButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +69,7 @@ export function localStorageSyncReducer(
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [

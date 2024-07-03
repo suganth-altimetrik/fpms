@@ -8,14 +8,14 @@ import {
   tap,
   throwError,
 } from 'rxjs';
-import { User } from './user.model';
+import { User } from '../models/user.model';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment.development';
 import { ToastrService } from 'ngx-toastr';
 import { Store, select } from '@ngrx/store';
-import { userSelector } from './redux/selector/user.selectors';
-import { UserState } from './redux/reducer/user.reducer';
-import { userLogin } from './redux/action/user.actions';
+import { userSelector } from '../../store/selector/user.selectors';
+import { UserState } from '../../store/reducer/user.reducer';
+import { userLogin } from '../../store/action/user.actions';
 
 export interface AuthResponse {
   data: {

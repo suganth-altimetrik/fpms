@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { getSocketMessage, joinRoom } from '../../shared/socket-methods';
-import { InvestApiService } from '../services/invest-api.service';
-import { SocketService } from '../services/socket.service';
+import { InvestApiService } from './../../services/invest-api.service';
+import { SocketService } from '../../services/socket.service';
 
 @Component({
   selector: 'app-dynamic-table',
@@ -153,20 +153,20 @@ export class DynamicTableComponent implements OnInit {
   interval: any;
 
   handleStart() {
-    this.http.dynamicDataStart().subscribe((data) => {
+    this.http.dynamicDataStart().subscribe((data: any) => {
       console.log(data);
     });
   }
 
   handleEnd() {
     clearInterval(this.interval);
-    this.http.dynamicDataStop().subscribe((data) => {
+    this.http.dynamicDataStop().subscribe((data: any) => {
       console.log(data);
     });
   }
 
   ngOnInit(): void {
-    this.socket.onNewMessage().subscribe((msg) => {
+    this.socket.onNewMessage().subscribe((msg: any) => {
       console.log('got a msg: ' + msg);
 
       const headIndex: number = Math.floor(Math.random() * 10);

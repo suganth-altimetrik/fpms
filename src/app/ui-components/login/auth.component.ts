@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { AuthResponse, AuthService } from './auth.service';
+import { AuthResponse, AuthService } from '../../../app/services/auth.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -10,7 +10,7 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './auth.component.html',
   styleUrl: './auth.component.css',
 })
-export class AuthComponent {
+export class LoginComponent {
   isLoginMode: boolean = true;
   isLoading: boolean = false;
 
@@ -29,7 +29,7 @@ export class AuthComponent {
 
     let apiObs = this.authService.login(email, password);
 
-    apiObs.subscribe((response) => {
+    apiObs.subscribe(() => {
       this.toastr.success('Login Successful!');
       this.router.navigate(['/dashboard']);
     });
@@ -43,7 +43,7 @@ export class AuthComponent {
 
     let apiObs = this.authService.signup(email, name, password);
 
-    apiObs.subscribe((response) => {
+    apiObs.subscribe(() => {
       this.toastr.success('Registration and Login Successful!');
       this.router.navigate(['/dashboard']);
     });

@@ -13,7 +13,7 @@ import {
   ApexYAxis,
   ApexFill,
 } from 'ng-apexcharts';
-import { InvestApiService } from '../services/invest-api.service';
+import { InvestApiService } from '../../services/invest-api.service';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;

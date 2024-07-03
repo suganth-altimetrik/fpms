@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { InvestApiService } from '../services/invest-api.service';
+import { InvestApiService } from '../../services/invest-api.service';
 import { Subscription } from 'rxjs';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-invest-summary',

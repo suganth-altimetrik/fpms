@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NewInvestmentComponent } from './new-investment/new-investment.component';
-import { AuthComponent } from './auth/auth.component';
-import { AuthGuard } from './auth/auth.guard';
+import { NewInvestmentComponent } from './ui-components/new-investment/new-investment.component';
+import { LoginComponent } from './ui-components/login/auth.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard] },
@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    component: AuthComponent,
+    component: LoginComponent,
   },
   {
     path: '',

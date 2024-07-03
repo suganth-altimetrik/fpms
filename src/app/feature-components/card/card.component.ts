@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Invest } from '../models/invest.model';
+import { Invest } from '../../models/invest.model';
 
 @Component({
   selector: 'app-card',

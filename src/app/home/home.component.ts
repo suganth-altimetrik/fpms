@@ -27,6 +27,8 @@ export class HomeComponent {
     ];
     const value: number = Math.floor(Math.random() * (4 - 1 + 1) + 1);
 
-    return icons.find((o) => o.id == value)?.name;
+    // return icons.find((o) => o.id == value)?.name;
+
+    return 'bell';
   }
 }
