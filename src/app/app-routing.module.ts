@@ -7,6 +7,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'dashboard', component: HomeComponent, canActivate: [AuthGuard] },
+
   {
     path: 'new-investment',
     component: NewInvestmentComponent,
@@ -15,6 +16,12 @@ const routes: Routes = [
   {
     path: 'auth',
     component: LoginComponent,
+  },
+  {
+    path: 'lazy',
+    loadChildren: () =>
+      import('./ui-components/test/test.module').then((m) => m.TestModule),
+    canActivate: [AuthGuard],
   },
   {
     path: '',
