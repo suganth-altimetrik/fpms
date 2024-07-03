@@ -15,9 +15,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private investApi: InvestApiService) {}
 
   ngOnInit(): void {
-    this.investApi.topInvestments().subscribe(({ data }: any) => {
-      this.topInvestments = data;
-    });
+    this.subscription = this.investApi
+      .topInvestments()
+      .subscribe(({ data }: any) => {
+        this.topInvestments = data;
+      });
   }
 
   trackRecord(index: number, data: Invest) {
