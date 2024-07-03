@@ -67,7 +67,6 @@ export class InvestChartComponent {
         _category.push(months[i - 1]);
       }
 
-      console.log(_data, _category);
       this.chartOptions = {
         series: [
           {

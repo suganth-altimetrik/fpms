@@ -13,4 +13,10 @@ body.theme-dark {
 
 body {
   background-color: var(--background-color);
+  color: var(--primary-color);
+
+  -webkit-transition: all 100ms ease-in; /* Safari */
+  transition: all 100ms ease-in;
+  -webkit-transition-delay: 100ms; /* Safari */
+  transition-delay: 100ms;
 }

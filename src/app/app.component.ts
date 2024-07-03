@@ -14,7 +14,7 @@ export class AppComponent {
   ) {}
   ngOnInit(): void {
     this.authService.autoLogin();
-    this.push.subscribeToNotifications();
+    // this.push.subscribeToNotifications();
   }
 
   list = ['suganth', 'jake', 'john', 'test'];

@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { ActionReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { localStorageSync } from 'ngrx-store-localstorage';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './ui-components/home/home.component';
 import { HeaderComponent } from './ui-components/header/header.component';
 import { IconsModule } from './icons/icons.module';
 import { CardComponent } from './feature-components/card/card.component';
@@ -25,10 +25,11 @@ import { InvestSummaryComponent } from './feature-components/invest-summary/inve
 import { DynamicTableComponent } from './feature-components/dynamic-table/dynamic-table.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PushNotificationComponent } from '../push-notification/push-notification.component';
-import { ButtonComponent } from './ui-components/button/button.component';
-import { ThemeSwitcherComponent } from '../theme-switcher/theme-switcher.component';
+import { ButtonComponent } from '../shared/button/button.component';
+import { ThemeSwitcherComponent } from './feature-components/theme-switcher/theme-switcher.component';
 import { LoginComponent } from './ui-components/login/auth.component';
 import { ToggleButtonComponent } from './ui-components/toggle-button/toggle-button.component';
+import { TextInputComponent } from '../shared/text-input/text-input.component';
 
 export function localStorageSyncReducer(
   reducer: ActionReducer<any>
@@ -51,7 +52,8 @@ export function localStorageSyncReducer(
     PushNotificationComponent,
     ButtonComponent,
     ThemeSwitcherComponent,
-    ToggleButtonComponent
+    ToggleButtonComponent,
+    TextInputComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Invest } from '../models/invest.model';
-import { InvestApiService } from '../services/invest-api.service';
+import { Invest } from '../../models/invest.model';
+import { InvestApiService } from '../../services/invest-api.service';
 
 @Component({
   selector: 'app-home',

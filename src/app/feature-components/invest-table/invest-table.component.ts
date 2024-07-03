@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { InvestApiService } from '../../services/invest-api.service';
 import { Invest } from '../../models/invest.model';
 
@@ -6,13 +6,12 @@ import { Invest } from '../../models/invest.model';
   selector: 'app-invest-table',
   templateUrl: './invest-table.component.html',
   styleUrl: './invest-table.component.scss',
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InvestTableComponent implements OnInit {
   recentList: Invest[] = [];
 
-  constructor(private investApi: InvestApiService) {}
-
-  ngOnInit(): void {
+  constructor(private investApi: InvestApiService) {
     this.investApi.recentInvestments().subscribe(({ data }: any) => {
       this.recentList = data;
     });
@@ -20,5 +19,11 @@ export class InvestTableComponent implements OnInit {
     this.investApi.investList.subscribe((data: any) => {
       this.recentList = [data, ...this.recentList];
     });
+  }
+
+  ngOnInit(): void {}
+
+  trackRecord(index: number, data: any) {
+    return data._id;
   }
 }

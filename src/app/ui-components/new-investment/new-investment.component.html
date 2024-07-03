@@ -1,56 +1,60 @@
-<div class="container bg-white p-3 rounded-3">
+<div class="container p-3 rounded-3">
   <div class="title mb-3">Add New Investment</div>
   <div class="row">
     <div class="col-4">
       <form #investForm="ngForm" (submit)="onInvestSave(investForm)">
         <div class="mb-3">
-          <label>Asset Type*</label>
-          <input
-            type="text"
-            class="form-control"
-            ngModel
-            name="asset_type"
-            required
-          />
+          <app-text-input
+            [props]="{
+              label: 'Asset Type*',
+              type: 'text',
+              name: 'asset_type',
+              required: true,
+              value: ''
+            }"
+          ></app-text-input>
         </div>
         <div class="mb-3">
-          <label>Quantity*</label>
-          <input
-            type="number"
-            class="form-control"
-            ngModel
-            name="quantity"
-            required
-          />
+          <app-text-input
+            [props]="{
+              label: 'Quantity*',
+              type: 'number',
+              name: 'quantity',
+              required: true,
+              value: ''
+            }"
+          ></app-text-input>
         </div>
         <div class="mb-3">
-          <label>Purchase Price($)*</label>
-          <input
-            type="number"
-            class="form-control"
-            ngModel
-            name="purchase_price"
-            required
-          />
+          <app-text-input
+            [props]="{
+              label: 'Purchase Price($)*',
+              type: 'number',
+              name: 'purchase_price',
+              required: true,
+              value: ''
+            }"
+          ></app-text-input>
         </div>
         <div class="mb-3">
-          <label>Invested On*</label>
-          <input
-            type="date"
-            class="form-control"
-            ngModel
-            name="date"
-            required
-          />
+          <app-text-input
+            [props]="{
+              label: 'Invested On*',
+              type: 'date',
+              name: 'date',
+              required: true,
+              value: ''
+            }"
+          ></app-text-input>
         </div>
         <div class="mb-3">
-          <button
-            class="btn btn-primary btn-sm pe-4 ps-4 me-2"
-            type="submit"
-            [disabled]="!investForm.valid || isLoading"
-          >
-            {{ isLoading ? "Saving..." : "Save" }}
-          </button>
+          <app-button
+            [props]="{
+              label: isLoading ? 'Saving...' : 'Save',
+              isDisabled: !investForm.valid || isLoading
+            }"
+          ></app-button>
+
           <a href="/dashboard" class="btn btn-secondary btn-sm pe-4 ps-4">
             Go Back
           </a>

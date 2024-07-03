@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody *ngIf="recentList.length > 0; else noData">
-    <tr *ngFor="let item of recentList">
+    <tr *ngFor="let item of recentList; trackBy: trackRecord">
       <td>{{ item.date | date }}</td>
       <td class="text-uppercase">{{ item.asset_type }}</td>
       <td class="text-center">{{ item.quantity }}</td>
