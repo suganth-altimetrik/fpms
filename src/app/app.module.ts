@@ -7,32 +7,34 @@ import { AppComponent } from './app.component';
 import { ActionReducer, StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { localStorageSync } from 'ngrx-store-localstorage';
-import { HomeComponent } from './ui-components/home/home.component';
-import { HeaderComponent } from './ui-components/header/header.component';
-import { IconsModule } from './icons/icons.module';
-import { CardComponent } from './feature-components/card/card.component';
+import { HeaderComponent } from './components/ui-components/header/header.component';
+import { IconsModule } from '../assets/icons/icons.module';
+import { CardComponent } from './components/ui-components/card/card.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
-import { NewInvestmentComponent } from './ui-components/new-investment/new-investment.component';
+import { NewInvestmentComponent } from './features/new-investment/new-investment.component';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { LoginComponent } from './features/login/login.component';
 import { reducer, userFeatureKey } from '../store/reducer/user.reducer';
 import { metaReducers } from '../store/reducer/meta-reducer';
 import { AuthInterceptorService } from './interceptor/auth-interceptor.service';
-import { InvestTableComponent } from './feature-components/invest-table/invest-table.component';
-import { InvestChartComponent } from './feature-components/invest-chart/invest-chart.component';
-import { InvestSummaryComponent } from './feature-components/invest-summary/invest-summary.component';
-import { DynamicTableComponent } from './feature-components/dynamic-table/dynamic-table.component';
+import { InvestTableComponent } from './components/functional-component/invest-table/invest-table.component';
+import { InvestChartComponent } from './components/functional-component/invest-chart/invest-chart.component';
+import { InvestSummaryComponent } from './features/dashboard/invest-summary/invest-summary.component';
+import { DynamicTableComponent } from './components/functional-component/dynamic-table/dynamic-table.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PushNotificationComponent } from '../push-notification/push-notification.component';
-import { ButtonComponent } from '../shared/button/button.component';
-import { ThemeSwitcherComponent } from './feature-components/theme-switcher/theme-switcher.component';
-import { LoginComponent } from './ui-components/login/auth.component';
-import { ToggleButtonComponent } from './ui-components/toggle-button/toggle-button.component';
-import { TextInputComponent } from '../shared/text-input/text-input.component';
-import { NewInvestmentModuleRoutingModule } from './ui-components/new-investment-module/new-investment-module-routing.module';
+import { ButtonComponent } from './components/ui-components/button/button.component';
+import { ThemeSwitcherComponent } from './components/functional-component/theme-switcher/theme-switcher.component';
+import { ToggleButtonComponent } from './components/ui-components/toggle-button/toggle-button.component';
+
 import { AgCharts } from 'ag-charts-angular';
-import { InvestAgChartComponent } from './feature-components/invest-ag-chart/invest-ag-chart.component';
+import { InvestAgChartComponent } from './components/functional-component/invest-ag-chart/invest-ag-chart.component';
+import { DashboardComponent } from './features/dashboard/dashboard.component';
+import { RegisterComponent } from './features/register/register.component';
+import { TextInputComponent } from './components/ui-components/text-input/text-input.component';
+import { NewInvestmentModuleRoutingModule } from './features/new-investment/new-investment-module-routing.module';
 
 export function localStorageSyncReducer(
   reducer: ActionReducer<any>
@@ -43,7 +45,6 @@ export function localStorageSyncReducer(
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     CardComponent,
     NewInvestmentComponent,
@@ -58,6 +59,8 @@ export function localStorageSyncReducer(
     ToggleButtonComponent,
     TextInputComponent,
     InvestAgChartComponent,
+    DashboardComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,

@@ -90,7 +90,7 @@ export class AuthService implements OnDestroy {
 
   logout() {
     this.userSub.next(null);
-    this.router.navigate(['/auth']);
+    this.router.navigate(['/login']);
     localStorage.removeItem('user');
   }
 
@@ -120,6 +120,6 @@ export class AuthService implements OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.loginSubscription.unsubscribe();
+    this.loginSubscription?.unsubscribe();
   }
 }

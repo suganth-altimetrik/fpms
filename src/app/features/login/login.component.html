@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-3 bg-white p-5 rounded-3 mt-5 auth">
+      <form #loginForm="ngForm" (submit)="onSubmitLogin(loginForm)">
+        <div class="title">Welcome Back!</div>
+        <small class="text-secondary"
+          >Sign in to explore your investments</small
+        >
+        <div class="mb-3 mt-5">
+          <label>Email</label>
+          <input
+            type="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+          />
+        </div>
+        <div class="mb-3">
+          <label>Password</label>
+          <input
+            type="password"
+            class="form-control"
+            ngModel
+            name="password"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <button
+            class="btn btn-primary btn-sm pe-4 ps-4 me-2"
+            type="submit"
+            [disabled]="!loginForm.valid || isLoading"
+          >
+            {{ isLoading ? "Loading..." : "Login" }}
+          </button>
+          <a routerLink="/register" role="button">Register</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="col"></div>
+  </div>
+</div>

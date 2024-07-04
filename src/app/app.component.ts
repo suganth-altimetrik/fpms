@@ -13,7 +13,7 @@ export class AppComponent {
     private push: PushNotificationService
   ) {}
   ngOnInit(): void {
-    this.authService.autoLogin();
+    // this.authService.autoLogin();
     // this.push.subscribeToNotifications();
   }
 }
